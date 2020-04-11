@@ -33,7 +33,7 @@ if not path.exists(CMUDICT_FILE_NAME):
       data = response.read()
       with open(CMUDICT_FILE_NAME, 'wb') as file:
         file.write(data)
-      print('Downloaded!')
+      print('Downloaded! Thanks for waiting.')
     except urllib.error.URLError:
       print('Sorry, couldn\'t complete the download :(')
       print(traceback.format_exc(limit=3, chain=0), file=sys.stderr)
