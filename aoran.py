@@ -28,10 +28,10 @@ CMUDICT_FILE_NAME = 'cmudict-0.7b'
 CMUDICT_LATEST_RELEASE = f'http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/{CMUDICT_FILE_NAME}'
 
 
-def resolve_article_for(word, silently=True):
+def resolve_article_for(word, silently=True, database_file=CMUDICT_FILE_NAME):
 
   # Check if we have the CMUdict release available, downloading it if necessary
-  if not path.exists(CMUDICT_FILE_NAME):
+  if not path.exists(database_file):
 
     if silently:
       answer = 'y'
@@ -44,7 +44,7 @@ def resolve_article_for(word, silently=True):
       try:
         response = urllib.request.urlopen(CMUDICT_LATEST_RELEASE)
         data = response.read()
-        with open(CMUDICT_FILE_NAME, 'wb') as file:
+        with open(database_file, 'wb') as file:
           file.write(data)
         if not silently:
           print('Downloaded! Thanks for waiting.')
@@ -54,7 +54,7 @@ def resolve_article_for(word, silently=True):
     else:
       raise UnauthorizedToFetchDatabase()
   else:
-    with open(CMUDICT_FILE_NAME, 'rb') as file:
+    with open(database_file, 'rb') as file:
       data = file.read()
 
   try:
