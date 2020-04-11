@@ -1,0 +1,45 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #6fc0db;
+  font-family: 'Raleway', sans-serif;
+}
+
+#box {
+  margin: 50px auto;
+  width: 280px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  border: thin solid rgb(223, 223, 223);
+  border-radius: 3px;
+  padding: 15px 5px;
+  color: gray;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #366e81;
+  border: thin solid #366e81;
+  border-radius: 3px;
+  color: white;
+  padding: 5px;
+  font-size: 1.1em;
+}
+
+#answer {
+  text-align: center;
+  margin-top: 25px;
+}
