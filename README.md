@@ -32,3 +32,14 @@ The auxiliary shell script assumes `python3` exists on your system. If not, you 
 $ python aoran.py table
 a table
 ```
+
+## Developers
+
+You can also use this as a library:
+
+```python
+import aoran
+
+article = aoran.resolve_article_for('word')
+print(article)
+```
